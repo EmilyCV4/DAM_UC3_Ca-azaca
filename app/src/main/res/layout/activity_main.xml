@@ -1,19 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Barra de pestañas -->
+
+    <EditText
+        android:id="@+id/et_origen4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/rounded_border"
+        android:hint="1 Adulto"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_origen3" />
+
+    <EditText
+        android:id="@+id/et_origen3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/rounded_border"
+        android:hint="Economy"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateFields" />
+
+    <EditText
+        android:id="@+id/et_fecha_vuelta2"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1"
+        android:background="@drawable/rounded_border"
+        android:hint="Data volta"
+        android:padding="12dp"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@+id/tabBar"
+        tools:layout_editor_absoluteX="206dp" />
+
+    <EditText
+        android:id="@+id/et_fecha_ida2"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_weight="1"
+        android:background="@drawable/rounded_border"
+        android:hint="Data ida"
+        android:padding="12dp"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_fecha_vuelta2"
+        app:layout_constraintEnd_toStartOf="@+id/et_fecha_vuelta2"
+        app:layout_constraintTop_toTopOf="@+id/et_fecha_vuelta2" />
+
+    <LinearLayout
+        android:id="@+id/tabBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        android:layout_marginTop="90dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Botón de pestaña Vuelos -->
+        <Button
+            android:id="@+id/Vuelos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/purple_700"
+            android:text="Vuelos"
+            android:textColor="@color/white" />
+
+        <!-- Botones adicionales -->
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Paquetes"
+            android:backgroundTint="@color/gray"
+            android:textColor="@color/black" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Hoteles"
+            android:backgroundTint="@color/gray"
+            android:textColor="@color/black" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Autos"
+            android:backgroundTint="@color/gray"
+            android:textColor="@color/black" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Seguros"
+            android:backgroundTint="@color/gray"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <!-- Formulario -->
+
+    <EditText
+        android:id="@+id/et_origen"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/rounded_border"
+        android:hint="Origen"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_fecha_vuelta2" />
+
+    <Button
+        android:id="@+id/btn_procurar_voos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/red"
+        android:text="Procurar voos"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.312"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="546dp" />
+
+    <LinearLayout
+        android:id="@+id/dateFields"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_destino">
+
+        <EditText
+            android:id="@+id/et_fecha_ida"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_border"
+            android:hint="Data ida"
+            android:padding="12dp" />
+
+        <EditText
+            android:id="@+id/et_fecha_vuelta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_border"
+            android:hint="Data volta"
+            android:padding="12dp" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/et_destino"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/rounded_border"
+        android:hint="Destino"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_origen" />
+
+    <!-- Campos de fecha -->
+
+    <!-- Dropdown para clase -->
+
+    <!-- Botón principal -->
 </androidx.constraintlayout.widget.ConstraintLayout>
